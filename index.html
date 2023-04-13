@@ -1,52 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <title>간단한 심리 테스트</title>
+    <title>귀여운 사람들만 보이는 사이트</title>
   </head>
   <body>
-    <h1>당신은 고양이파인가요, 강아지파인가요?</h1>
-    <p>아래 버튼 중에서 하나를 선택하세요:</p>
-    <button onclick="showImage('cat')">A. 고양이</button>
-    <button onclick="showImage('dog')">B. 강아지</button>
-    <div id="result"></div>
+    <h1>깜찍이 고양이 보고 싶은 사람!!</h1>
+    
+    <button onclick="showAnimal()">통잘자 쿨냥이 보기</button>
+    <br />
+    <br />
+    <a href="https://link.coupang.com/a/UWaQo" target="_blank">
+      <img id="animal-image" style="width:20%" />
+    </a>
     <script>
-      function showImage(animal) {
-        const resultDiv = document.querySelector('#result');
-        resultDiv.innerHTML = '';
+      function showAnimal() {
+        var images = [
+        "C:/Users/EUNEUN/Desktop/cat1.jpg",
+        "C:/Users/EUNEUN/Desktop/cat2.jpg",
+        "C:/Users/EUNEUN/Desktop/cat3.jpg",
 
-        // 쿠팡 파트너스 광고 창을 생성합니다.
-        const adDiv = document.createElement('div');
-        adDiv.id = 'coupang-ad';
-        resultDiv.appendChild(adDiv);
-
-        const image = document.createElement('img');
-        if (animal === 'cat') {
-          // 쿠팡 파트너스에서 발급받은 고양이 이미지 링크로 대체합니다.
-          image.src = 'https://placekitten.com/200/300';
-          image.alt = '고양이';
-        } else if (animal === 'dog') {
-          // 쿠팡 파트너스에서 발급받은 강아지 이미지 링크로 대체합니다.
-          image.src = 'https://placedog.net/200/300';
-          image.alt = '강아지';
-        }
-
-        // 이미지를 클릭하면 쿠팡 파트너스 링크로 이동하도록 합니다.
-        image.onclick = function() {
-          window.open('https://coupa.ng/bwYD6Z', '_blank');
-        }
-
-        resultDiv.appendChild(image);
+        ];
+        var randomIndex = Math.floor(Math.random() * images.length);
+        var animalImage = document.getElementById("animal-image");
+        animalImage.src = images[randomIndex];
       }
     </script>
-    <script type="text/javascript" src="//t1.daumcdn.net/adfit/static/ad.min.js" async></script>
-    <ins class="daum_ad" style="display:none;" data-ad-unit="DAN-pim2df6i9a0lu" data-ad-width="300" data-ad-height="250"></ins>
-    <script>
-      (function(){
-        var ad = document.querySelector('.daum_ad');
-        ad.style.display = 'block';
-        new DaumAdFit(ad, {id: "AF4814949", domain: "coupa.ng"});
-      })();
-    </script>
+    <p>고양이 사진을 눌러서 창작자를 후원해주세요!!</p>
+    <p>"이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다."</p>
   </body>
 </html>
