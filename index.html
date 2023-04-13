@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>간단한 심리 테스트</title>
+  </head>
+  <body>
+    <h1>당신은 고양이파인가요, 강아지파인가요?</h1>
+    <p>아래 버튼 중에서 하나를 선택하세요:</p>
+    <button onclick="showImage('cat')">A. 고양이</button>
+    <button onclick="showImage('dog')">B. 강아지</button>
+    <div id="result"></div>
+    <script>
+      function showImage(animal) {
+        const resultDiv = document.querySelector('#result');
+        resultDiv.innerHTML = '';
+
+        // 쿠팡 파트너스 광고 창을 생성합니다.
+        const adDiv = document.createElement('div');
+        adDiv.id = 'coupang-ad';
+        resultDiv.appendChild(adDiv);
+
+        const image = document.createElement('img');
+        if (animal === 'cat') {
+          // 쿠팡 파트너스에서 발급받은 고양이 이미지 링크로 대체합니다.
+          image.src = 'https://placekitten.com/200/300';
+          image.alt = '고양이';
+        } else if (animal === 'dog') {
+          // 쿠팡 파트너스에서 발급받은 강아지 이미지 링크로 대체합니다.
+          image.src = 'https://placedog.net/200/300';
+          image.alt = '강아지';
+        }
+
+        // 이미지를 클릭하면 쿠팡 파트너스 링크로 이동하도록 합니다.
+        image.onclick = function() {
+          window.open('https://coupa.ng/bwYD6Z', '_blank');
+        }
+
+        resultDiv.appendChild(image);
+      }
+    </script>
+    <script type="text/javascript" src="//t1.daumcdn.net/adfit/static/ad.min.js" async></script>
+    <ins class="daum_ad" style="display:none;" data-ad-unit="DAN-pim2df6i9a0lu" data-ad-width="300" data-ad-height="250"></ins>
+    <script>
+      (function(){
+        var ad = document.querySelector('.daum_ad');
+        ad.style.display = 'block';
+        new DaumAdFit(ad, {id: "AF4814949", domain: "coupa.ng"});
+      })();
+    </script>
+  </body>
+</html>
